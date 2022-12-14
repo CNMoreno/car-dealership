@@ -22,10 +22,10 @@ export class CarsService {
   }
 
   findOneById(id: string) {
-    const car = this.cars.find((car) => car.id === id);
-    if (!car) throw new NotFoundException(`Car with id ${id} not found`);
+    const findCar: Car = this.cars.find((car) => car.id === id);
+    if (!findCar) throw new NotFoundException(`Car with id ${id} not found`);
 
-    return car;
+    return findCar;
   }
 
   create(car: CreateCarDto) {
